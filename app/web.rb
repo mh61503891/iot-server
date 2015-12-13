@@ -1,5 +1,5 @@
 require 'sinatra/base'
-require 'slim'
+require 'tilt/coffee'
 
 module IoT
   class Web < Sinatra::Base
@@ -7,6 +7,7 @@ module IoT
     configure :development do
       require 'sinatra/reloader'
       register Sinatra::Reloader
+      require 'slim'
       Slim::Engine.set_default_options pretty: true
     end
 
@@ -18,7 +19,8 @@ module IoT
       coffee :index
     end
 
-    post '/' do
+    get '/index.css' do
+      sass :index
     end
 
   end

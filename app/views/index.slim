@@ -2,22 +2,20 @@ doctype html
 html
   head
     meta charset="utf-8"
-    meta name="apple-mobile-web-app-capable" content="yes"
-    meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"
-    meta name="viewport" content="initial-scale=1,maximum-scale=1,minimal-ui"
     title IoT (Internet of Throwings)
     link href="https://cdnjs.cloudflare.com/ajax/libs/epoch/0.8.4/css/epoch.min.css" rel="stylesheet"
+    link href="index.css" rel="stylesheet"
     script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"
     script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.10/d3.min.js"
     script src="https://cdnjs.cloudflare.com/ajax/libs/epoch/0.8.4/js/epoch.min.js"
   body
-    div id="chart" class="epoch" style="width: 800px; height: 200px"
-    p
-      span style="font-size:500%; margin:0;" CURRENT:
-      span style="font-size:500%; margin:0;" id="current-score"
-    p
-      span style="font-size:500%; margin:0;" MAX:
-      span style="font-size:500%; margin:0;" id="max-score"
-    button id="clear" MAXクリア
-    script src="index.js" 
-    
+    div id="chart" class="epoch"
+    div class="score"
+      p
+        span current score (=|x|+|y|+|z|):
+        span id="current-score"
+      p
+        span max score:
+        span id="max-score"
+      button id="clear" Clear max value
+      script src="index.js"
