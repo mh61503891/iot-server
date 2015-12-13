@@ -14,13 +14,9 @@ module IoT
 
       ws = Faye::WebSocket.new(env, nil, ping: 15)
 
-      ws.on :open do |_event|
+      ws.on :open do |event|
         p [:open, ws.object_id]
         @clients << ws
-        # ws.send({ you: ws.object_id }.to_json)
-        @clients.each do |client|
-          client.send({ count: @clients.size }.to_json)
-        end
       end
 
       ws.on :message do |event|
@@ -33,9 +29,6 @@ module IoT
       ws.on :close do |event|
         p [:close, ws.object_id, event.code]
         @clients.delete(ws)
-        @clients.each do |client|
-          client.send({ count: @clients.size }.to_json)
-        end
         ws = nil
       end
 
