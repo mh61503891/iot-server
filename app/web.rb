@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require 'tilt/coffee'
+require 'tilt/sass'
 
 module IoT
   class Web < Sinatra::Base
