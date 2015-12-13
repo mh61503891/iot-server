@@ -1,4 +1,4 @@
-require './app'
-require './websocket'
+require './app/web'
+require './app/websocket'
 use IoT::WebSocket
-run IoT::App
+run IoT::Web

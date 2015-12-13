@@ -1,11 +1,13 @@
 require 'sinatra/base'
+require 'slim'
 
 module IoT
-  class App < Sinatra::Base
+  class Web < Sinatra::Base
 
     configure :development do
       require 'sinatra/reloader'
       register Sinatra::Reloader
+      Slim::Engine.set_default_options pretty: true
     end
 
     get '/' do
