@@ -4,6 +4,8 @@ This is a toy program ;-)
 
 This web application shows a smartphone's accelerometer values via WebSocket protocol  in real time.
 
+IoT Client (Android App) is available at https://github.com/mh61503891/iot-client.
+
 ![](/screenshots/screenshot-1.jpg)
 
 # Installation and Usage
